@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="ja">
 
 <head>
+    <meta charset="utf-8">
     <title>Crowds Info Provider</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <h1>ただ今 {{ state }}</h1>
+    <div class="header-logo">
+        <img src={{ state }}>
+        <p>快適度測るくん</p>
+    </div>
+
+    <div class="print">
+        <img src={{}}>
+    </div>
+
+    <div class="main">
+        <p>{{ state }}</p>
+    </div>
 </body>
 
 </html>
