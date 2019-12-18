@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
 
-level = [700, 1000, 2500]
+level = [700, 1000, 1500]
 
 @app.route('/')
 def index():
@@ -27,6 +27,6 @@ def index():
     return render_template('index.html', state=state, img=img, co2=co2)
 
 def get_co2():
-    return 500
+    return 1600
 
 app.run(port=8000, debug=True)
