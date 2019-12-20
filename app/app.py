@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for
+import serial
 
 app = Flask(__name__)
 
@@ -27,6 +28,10 @@ def index():
     return render_template('index.html', state=state, img=img, co2=co2)
 
 def get_co2():
-    return 1600
+    ser = serial.Serial('/dev/cu.usbmodem1424301', 9600, timeout=None)
+    line = ser.readline()
+    line1 = int(line.rstrip().decode())
+    ser.close()
+    return line1
 
 app.run(port=8000, debug=True)
